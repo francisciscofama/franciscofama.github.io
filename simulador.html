@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title> SimuladorFisica</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="bootstrap-5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="simulador.css">
+   <script src="jquery-3.6.1/jquery-3.6.1.min.js"></script>
+   
+
+</head>
+
+
+<body class ="body">
+
+    <div class="content">
+        <h2 style="text-align: center;"> Lei de Arquimedes - Empuxo</h2>
+      
+    </div>
+
+    <div class="button">
+        <button  class="txt" id="download"> Salvar</button>
+        <button  class="txt" id="juntos" onclick="juntos()"> Iniciar Juntos</button>
+        <button  class="txt" id="parar" onclick="parar()"> Parar</button>
+        <input class="txt" type="button" name="Salvar " value="Repor">
+        <br>
+        <input type="file" name="deObjecto" id="densidadeObjecto">
+        
+    </div>
+    <div class="position">
+        <button class="btn-back" onclick="adicionarObejcto()"> </button>
+        <button class="btn1-back" onclick="eliminarObejcto()"> </button>
+    </div>
+    </div>
+
+    </div>
+    <div class="position1">
+        <button class="btn2-back" onclick="adicionarObejcto1()"> </button>
+        <button class="btn1-back" onclick="eliminarObejcto1()"> </button>
+    </div>
+    </div>
+
+
+    <div class="objecto"></div>
+    <div class="objecto1"></div>
+    <div class="objecto2"></div>
+
+    <div class = "recipiente">
+        <div class = "fluido"></div>
+    </div>
+
+    <form id="formulario" class="form">
+        <h1 style="color: blue">Dados de Entrada</h1>
+
+        <h1> Objecto</h1>
+        <label for="densidadeObjecto">Densidade</label><br>
+        <textarea style="width: 90px;" rows="1" cols="1" id="preview"></textarea>
+    
+
+        <br>
+        <h1> Liquido</h1>
+        <label for="densidadeLiqui">Densidade</label><br>
+        <textarea style="width: 90px;" rows="1" cols="1" id="preview1"></textarea>
+
+        <br>
+        <h1 style="color: rgb(13, 10, 174)">Dados de Saida</h1>
+
+        
+        <label for="densidade">Peso do Objecto</label><br>
+        <input type="text" name="densidade" id="pesoObjecto">
+        <label for="densidade">N</label>
+    
+        <br>
+        <label for="estado">Empuxo</label><br>
+        <input type="text" name="empuxo" id="empuxo">
+        <label for="estado">N</label>
+
+       
+        <br> <br>
+        <h1 style="color: rgb(13, 10, 174)">Dados Padroes</h1>
+
+        <label for="volumeRecipiente">Volume recipiente</label><br>
+        <input type="text" name="volumeRecipiente" id="volumeRecipiente">
+        <label for="volumeRecipiente">cm3</label>
+        <br>
+        <label for="volumeObj">Volume do Objecto</label><br>
+        <input type="text" name="volumeObj" id="volumeObjecto">
+        <label for="volumeObj">cm3</label>
+        <button type="button" onclick="mostrar()" >Iniciar</button>
+        <br>
+ 
+    </form>
+    <form class="formulario1" class="form">
+        <h1 style="color: blue">Dados de Entrada</h1>
+
+        <h1> Objecto</h1>
+        <label for="estado">Densidade</label><br>
+        <input type="text" name="deObjecto" id="preview2">
+        <label for="estado">g/cm3</label>
+
+        <br>
+        <h1> Liquido</h1>
+        <label for="densidade">Densidade</label><br>
+        <input type="text" name="desLiquido" id="preview3">
+        <label for="densidade">g/cm3</label>
+
+        <br>
+        <h1 style="color: rgb(255, 0, 0)">Dados de Saida</h1>
+
+        
+        <label for="densidade">Peso do Objecto</label><br>
+        <input type="text" name="densidade" id="pesoObjecto1">
+        <label for="densidade">N</label>
+    
+        <br>
+        <label for="estado">Empuxo</label><br>
+        <input type="text" name="empuxo" id="empuxo1">
+        <label for="estado">N</label>
+
+       
+        <br> <br>
+        <h1 style="color: rgb(243, 12, 54)">Dados Padroes</h1>
+
+        <label for="volumeRecipiente">Volume recipiente</label><br>
+        <input type="text" name="volumeRecipiente" id="volumeRecipiente1">
+        <label for="volumeRecipiente">cm3</label>
+        <br>
+        <label for="volumeObj">Volume do Objecto</label><br>
+        <input type="text" name="volumeObj" id="volumeObjecto1">
+        <label for="volumeObj">cm3</label>
+        <button type="button" onclick="mostrar1()" >Iniciar</button>
+        <br>
+ 
+    </form>
+
+</form>
+<form class="formulario2" class="form">
+    <h1 style="color: blue">Dados de Entrada</h1>
+
+    <h1> Objecto</h1>
+    <label for="estado">Densidade</label><br>
+    <input type="text" name="densidadeObjecto" id="densidadeObjecto2">
+    <label for="estado">g/cm3</label>
+
+    <br>
+    <h1> Liquido</h1>
+    <label for="densidade">Densidade</label><br>
+    <input type="text" name="desLiquido" id="densidadeLiquido2">
+    <label for="densidade">g/cm3</label>
+
+    <br>
+    <h1 style="color: rgb(255, 0, 0)">Dados de Saida</h1>
+
+    
+    <label for="densidade">Peso do Objecto</label><br>
+    <input type="text" name="densidade" id="pesoObjecto2">
+    <label for="densidade">N</label>
+
+    <br>
+    <label for="estado">Empuxo</label><br>
+    <input type="text" name="empuxo" id="empuxo2">
+    <label for="estado">N</label>
+
+    <br> <br>
+    <h1 style="color: rgb(243, 12, 54)">Dados Padroes</h1>
+
+    <label for="volumeRecipiente">Volume recipiente</label><br>
+    <input type="text" name="volumeRecipiente" id="volumeRecipiente2">
+    <label for="volumeRecipiente">cm3</label>
+    <br>
+    <label for="volumeObj">Volume do Objecto</label><br>
+    <input type="text" name="volumeObj" id="volumeObjecto2">
+    <label for="volumeObj">cm3</label>
+    <button type="button" onclick="calculo()" >Iniciar</button>
+    <br>
+
+</form>
+    <script src="socket.io.js"></script> 
+    <script src="simulador.js"></script> 
+    <script src="arquivo.js"></script> 
+    </div>
+    
+</body>
+
+</html>
